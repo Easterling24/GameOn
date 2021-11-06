@@ -133,17 +133,34 @@ const checkConditions = () => {
   return valid;
 };
 
+
+
 const checkOptions = () => {
   let valid = false;
   const locations = optionsEl;
-  let err = document.getElementById("option-err");
+
+  let errorMsg = document.getElementsByClassName("location-err")
+  console.log(errorMsg)
+
 
   for (let location of locations) {
+
+   
+
+
     if (!location.checked) {
-      err.textContent = "Choisissez une ville";
+
+    
+      errorMsg.textContent ="Choisissez une ville"
+
+
     } else {
       valid = true;
-      err.style.display = "none";
+
+
+  
+     
+
     }
   }
 
