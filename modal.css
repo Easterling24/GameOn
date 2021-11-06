@@ -130,7 +130,7 @@ main {
   z-index: 1;
   left: 0;
   top: 0;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
@@ -487,7 +487,7 @@ footer {
 @keyframes modalopen {
   from {
     opacity: 0;
-    transform: translateY(-150px);
+    transform: translateY(150px);
   }
   to {
     opacity: 1;
@@ -717,19 +717,22 @@ footer {
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media  screen and (max-width: 540px) {
   body {
     max-width: 480px;
     margin: auto;
-  }
+  } 
 
-  .topnav {
-  }
+ small {
+   float: right;
+   font-size: 15px;
+ }
 
   main {
     margin: 0;
     padding: 0 1rem;
     position: relative;
+    text-align: left;
   }
 
   .header-logo img {
@@ -769,13 +772,25 @@ footer {
     transition: all 220ms ease-in-out;
   }
 
+  #terms{
+    margin-bottom: 0;
+  }
+
+  #terms small {
+    margin-right: 5.7rem;
+  }
+
   #content {
-    width: 90%;
-    max-height: 200vh;
-    position: relative;
+    width: 100%;
+    height: 91%;
+    max-height: 150vh;
+    position: absolute;
+    bottom: 0;
     overflow: hidden;
-    margin: 20% auto;
+    border-radius: 15px 15px 0 0;
     z-index: 3;
+    margin: 0;
+ 
   }
 
   .formData small {
@@ -794,8 +809,16 @@ footer {
   }
 
   .formData {
-    height: 70px;
-    margin: 1rem;
+    height: 60px;
+  margin-bottom: 0.7rem;
+  }
+
+  .formData input {
+    height: 35px;
+  }
+
+  .formData:nth-child(7){
+    margin: 0;
   }
 
   .checkbox2-label {
@@ -815,7 +838,7 @@ footer {
   }
 
   #locations {
-    height: 80px;
+    height: 75px;
   }
 
   #loacations label {
@@ -831,38 +854,40 @@ footer {
     z-index: 4;
     background: none;
     overflow: visible;
+    height: 100%;
+    width: 100%;
+    
+  
   }
+
+
 
   #submit {
     font-size: 80%;
+    padding-top: 1rem;
   }
   #submit label {
     white-space: nowrap;
   }
 
-  #bground #content {
-    width: 100%;
-    height: 100%;
-    /* max-height: 200vh; */
-    border-radius: 0px;
-  }
+
 
   #submit label {
     font-size: 12px;
   }
 
   .modal-body {
-    padding: 0 20px;
-    margin-bottom: 20%;
+    padding-top: 2rem;
+ 
   }
 
   .btn-submit {
     margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
   }
 
   .text-label{
     font-size: 12px;
-    margin-left: 1rem;
     margin-top: 2rem;
   }
 
