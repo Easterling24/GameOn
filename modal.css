@@ -130,14 +130,14 @@ main {
   z-index: 1;
   left: 0;
   top: 0;
-  /* height: 100%; */
+  height: 100%;
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
 
 .bground .confirm-reserv {
-  color: green;
+  color: #fff;
   position: absolute;
   text-align: center;
   top: 50%;
@@ -163,6 +163,7 @@ small {
 .content {
   margin: 5% auto;
   width: 100%;
+  height: 80vh;
   max-width: 600px;
   max-height: 100vh;
   animation-name: modalopen;
@@ -204,9 +205,47 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
+/*** CheckBox Attribute**/
+
+.checkbox2-label[data-error]::after {
+  content: attr(data-error);
+  font-size: 1em;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.checkbox2-label[data-error-visible="true"]::after {
+  opacity: 1;
+}
+
+#locations.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 12px;
+  color: #e54858;
+  display: inline-block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: left;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+#locations.formData[data-error-visible="true"]::after {
+  opacity: 1;
+}
+
+/*** Text Control ***/
+
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.4em;
+  font-size: 0.5em;
   color: #e54858;
   display: block;
   margin-top: 7px;
@@ -222,12 +261,12 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+
 input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
+}
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -432,7 +471,6 @@ input[data-error]::after {
 } */
 .hero-content > * {
   position: relative;
-  z-index: 1;
 }
 .hero-headline {
   font-size: 3rem;
@@ -573,13 +611,17 @@ footer {
     align-items: center;
   }
 
+  #content{
+    z-index: 3;
+  }
+
   #burger-menu {
-    position: absolute;
+    position: relative;
     cursor: pointer;
     height: 40px;
     width: 40px;
     overflow: visible;
-    z-index: 2;
+
     visibility: visible;
     display: flex;
     justify-content: center;
@@ -653,24 +695,22 @@ footer {
   #menu {
     z-index: 1;
     visibility: hidden;
-    min-height: 100%;
-    min-width: 100%;
+    height: 100%;
+    width: 70vh;
     position: fixed;
     opacity: 0;
     bottom: 0;
     vertical-align: bottom;
-    padding-left: 1rem;
-
-    padding-top: 40%;
-    text-align: center;
+    padding-left: 2rem;
+    padding-top: 20%;
     transition: all 0.3s ease-in-out;
     transform: translateX(110%);
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: baseline;
-    text-align: center;
+    scroll-behavior: auto;
+    overflow-y: scroll;
   }
 
   #menu.overlay {
@@ -683,19 +723,58 @@ footer {
 
   #menu a {
     display: block;
+    z-index: 2;
     color: white;
     text-decoration: none;
     font-size: 1.3rem;
     margin: 2rem 0;
     transition: all 220ms ease-in-out;
+    animation: from-right 400ms 1s both
+    
   }
+
+  @keyframes from-right {
+
+    from{
+      transform: translateX(150px);
+      opacity: 0;
+      animation-delay: 2s;
+
+    }
+    to{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    
+  }
+
+
 
   #menu a:hover {
     text-shadow: 0 3px 8px rgb(252, 243, 243);
   }
+
+  #locations.formData[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.5em;
+    color: #e54858;
+    display: inline-block;
+    margin-top: 7px;
+    margin-left: 0;
+
+    margin-bottom: 7px;
+    text-align: left;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  #locations.formData[data-error-visible="true"]::after {
+    opacity: 1;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .topnav.responsive {
     position: relative;
   }
@@ -717,187 +796,71 @@ footer {
   }
 }
 
-@media  screen and (max-width: 540px) {
+@media only screen and (max-width: 540px) {
   body {
     max-width: 480px;
     margin: auto;
-  } 
-
- small {
-   float: right;
-   font-size: 15px;
- }
-
-  main {
-    margin: 0;
-    padding: 0 1rem;
-    position: relative;
-    text-align: left;
-  }
-
-  .header-logo img {
-    height: 30px;
-  }
-  .topnav a {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-
-  .hero-headline {
-    font-size: 2.5rem;
-
-    width: 90%;
   }
 
   .topnav {
-    margin: 0 0.5rem;
-  }
-
-  .hero-text {
-    font-size: 1rem;
-    white-space: none;
-    width: 90%;
-  }
-
-  #close {
-    right: 20px;
-  }
-
-  #menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    margin: 2rem 0;
-    transition: all 220ms ease-in-out;
-  }
-
-  #terms{
-    margin-bottom: 0;
-  }
-
-  #terms small {
-    margin-right: 5.7rem;
-  }
-
-  #content {
-    width: 100%;
-height: 90%;
-    max-height: 150vh;
-    position: absolute;
-    bottom: 0;
-    overflow: hidden;
-    border-radius: 15px 15px 0 0;
-    z-index: 3;
-    margin: 0;
- 
-  }
-
-  .formData small {
-    display: inline-block;
-    font-size: 10px;
-    white-space: nowrap;
-
-    margin-top: 0;
-  }
-
-  .checkbox-label .checkbox-icon {
-    width: 10px;
-    height: 10px;
-    top: 2.5px;
-    left: -20px;
-  }
-
-  .formData {
-    height: 60px;
-  margin-bottom: 0.7rem;
-  }
-
-  .formData input {
-    height: 35px;
-  }
-
-  .formData:nth-child(7){
     margin: 0;
   }
 
-  .checkbox2-label {
-    margin-bottom: 1.5rem;
+  .hero-headline{
+    font-size: 2rem;
+    text-align: left;
   }
 
-  .text-label {
-    margin-top: 0.2rem;
-  }
-
-  .checkbox-label {
-    font-size: 10px;
-    margin-left: 22px;
-  }
-  .checkbox2-label {
-    margin-bottom: 0;
-  }
-
-  #locations {
-    height: 75px;
-  }
-
-  #loacations label {
-    font-size: 10px;
+  .hero-text{
+    width: 70%;
+    text-align: left;
   }
 
   #burger-menu {
-    width: 40px;
-    margin-left: 2rem;
+    z-index: 1;
+    margin-left: 1.5rem;
   }
 
   #bground {
-    z-index: 4;
+    overflow: hidden;
     background: none;
-    overflow: visible;
-    height: 100%;
-    width: 100%;
-    
-  
-  }
-
-
-
-  #submit {
-    font-size: 80%;
-    padding-top: 1rem;
-  }
-  #submit label {
-    white-space: nowrap;
-  }
-
-
-
-  #submit label {
-    font-size: 12px;
+    top: 8%;
   }
 
   .modal-body {
-    padding-top: 2rem;
-    padding: 0 10px;
+    padding: 0 1rem;
+
+    position: absolute;
+    bottom: 0;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #submit {
+    scroll-behavior: smooth;
+    overflow: auto;
+    max-height: 120vh;
     height: 100%;
-    position: relative;
-   
- 
+  }
+
+  form::-webkit-scrollbar {
+    display: none;
+  }
+
+  .formData {
+    margin-bottom: 2rem;
+  }
+
+  #content {
+    height: 90%;
+    border-radius: 10px 10px 0 0;
   }
 
   .btn-submit {
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
+    margin-bottom: 1rem;
   }
-
-  .text-label{
-    font-size: 12px;
-    margin-top: 2rem;
-  }
-
-
 }
