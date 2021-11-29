@@ -36,6 +36,7 @@ img {
 }
 .header-logo {
   float: left;
+
 }
 .main-navbar {
   float: right;
@@ -51,16 +52,28 @@ img {
   font-size: 20px;
   font-family: Roboto, sans-serif;
   border-bottom: 1px solid transparent;
+  transition: all 330ms ease-in-out;
+  border-radius: 15px;
 }
 
 .topnav a:hover {
-  color: #ff0000;
-  border-bottom: solid 1px red;
+  color:#fff;
+  border-bottom: solid 1px #fff;
+  background-color: red;
+  border-radius: 15px;
 }
 
+
 .topnav a.active {
-  color: #ff0000;
+  color:#fff;
+  border-bottom: solid 1px #fff;
+  background-color: red;
+  border-radius: 15px;
 }
+
+
+
+
 
 .topnav .icon {
   display: none;
@@ -92,6 +105,7 @@ main {
   padding: 0.75rem 2.5rem;
   border-radius: 1rem;
   cursor: pointer;
+  transition: all 300ms ease-in-out;
 }
 
 .modal-btn:hover {
@@ -132,7 +146,6 @@ main {
   top: 0;
   height: 100%;
   width: 100%;
-  overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
 
@@ -473,9 +486,10 @@ input[data-error]::after {
   position: relative;
 }
 .hero-headline {
-  font-size: 3rem;
+  font-size: 6rem;
+  width: 800px;
   font-weight: normal;
-  white-space: nowrap;
+;
 }
 
 .hero-text {
@@ -729,7 +743,8 @@ footer {
     font-size: 1.3rem;
     margin: 2rem 0;
     transition: all 220ms ease-in-out;
-    animation: from-right 400ms 1s both
+    animation: from-right 400ms 1s both;
+    border-bottom: 0;
     
   }
 
@@ -752,6 +767,7 @@ footer {
 
   #menu a:hover {
     text-shadow: 0 3px 8px rgb(252, 243, 243);
+    background: none;
   }
 
   #locations.formData[data-error]::after {
@@ -806,13 +822,33 @@ footer {
     margin: 0;
   }
 
+  .hero-content{
+   padding-left: 1rem;
+   min-width: 100px;
+  }
+
+
+  .hero-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .hero-headline{
     font-size: 2rem;
     text-align: left;
   }
 
+  .header-logo{
+    margin-left: 2rem;
+  }
+  .header-logo img {
+    height: 40px;
+  }
+
   .hero-text{
-    width: 70%;
+    width: 100%;
     text-align: left;
   }
 
