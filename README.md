@@ -1,5 +1,8 @@
-# Projet GameOn
-1. Forkez ce repo ;
-2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ;
-3. Il n'y a aucune dépendance ;
-4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
+# OpenClassroom Project 4
+
+### Building a landing page with JavaScript [Application demo](https://easterling24.github.io/YevgeniyGupalo__P4__5112021/)
+
+## Project installation
+
+* Start Git bash
+* git clone https://github.com/Easterling24/YevgeniyGupalo__P4__5112021.git
